@@ -6,7 +6,22 @@ rm -rf grading-area
 mkdir grading-area
 
 git clone $1 student-submission
-echo 'Finished cloning'
+if [[ -f student-submission/ListExamples.java ]]
+    then 
+       
+        echo 'Finished cloning'
+        cp -r student-submission/ListExamples.java grading-area
+        
+    else
+        echo 'Please submit a valid file'
+        exit
+fi
+
+if [[ grep "ListExamples" student-submission/ListExamples.java != "" ]]
+    echo 'steven sucks'
+fi
+
+
 
 
 # Draw a picture/take notes on the directory structure that's set up after
