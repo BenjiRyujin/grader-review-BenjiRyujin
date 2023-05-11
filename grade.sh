@@ -10,18 +10,18 @@ if [[ -f student-submission/ListExamples.java ]]
     then 
        
         echo 'Finished cloning'
-        cp -r student-submission/ListExamples.java grading-area
+        cp student-submission/ListExamples.java grading-area
+        cp TestListExamples.java grading-area
         
     else
         echo 'Please submit a valid file'
         exit
 fi
 
-if [[ grep "ListExamples" student-submission/ListExamples.java != "" ]]
-    echo 'steven sucks'
-fi
+cd grading-area
+javac -cp ../lib/junit-4.13.2.jar:../lib/hamcrest-core-1.3.jar:. ListExamples.java TestListExamples.java
+java -cp ../lib/junit-4.13.2.jar:../lib/hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore TestListExamples
 
-lol
 
 
 # Draw a picture/take notes on the directory structure that's set up after
