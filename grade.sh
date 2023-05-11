@@ -21,7 +21,7 @@ if [[ grep "ListExamples" student-submission/ListExamples.java != "" ]]
     echo 'steven sucks'
 fi
 
-
+lol
 
 
 # Draw a picture/take notes on the directory structure that's set up after
