@@ -32,7 +32,7 @@ if [[ -s passed.txt ]]
 
 fi
 
-
+echo -n 'Test(s) failed:' ; awk '{print $5}' failures.txt 
 
 # Draw a picture/take notes on the directory structure that's set up after
 # getting to this point
